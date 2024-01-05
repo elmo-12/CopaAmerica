@@ -1,0 +1,55 @@
+{
+    "menu": {
+        "op1": "Inicio",
+        "op2": "Ganadores",
+        "op3": "Estadios",
+        "op4": "Mapa"
+    },
+    "ganadores": {
+        "subtitulo": "GANADORES",
+        "titulo": "CONOZCA A LOS MAS RECIENTES GANADORES",
+        "r0": "Uruguay se consagró campeón de la Copa América en 2011 al vencer a Paraguay en la final mediante un contundente 3-0. Este logro marcó el decimoquinto título para la selección uruguaya.",
+        "b0": "Ver Mas",
+        "r1": "Chile ganó el torneo al vencer a Argentina en la final, que se decidió por penales después de un empate 0-0 en el tiempo reglamentario. Fue el segundo título consecutivo de Chile en la Copa América.",
+        "b1": "Ver Mas",
+        "r2": "La selección brasileña ganó el torneo al vencer a Perú 3-1 en la final, que tuvo lugar el 7 de julio de 2019, en el Estadio Maracaná de Río de Janeiro. Fue el noveno título de la selección brasileña en la historia de la Copa América.",
+        "b2": "Ver Mas",
+        "r3": "La selección Argentina aseguró el título del torneo al derrotar a Brasil 1-0 en la final, celebrada el 10 de julio de 2021 en el Estadio Maracaná de Río de Janeiro. Este triunfo marcó el decimoquinto título en la historia de la Copa América para la selección argentina.",
+        "b3": "Ver Mas"
+    },
+    "estadios": {
+        "subtitulo": "ESTADIOS",
+        "titulo": "CONOZCA LOS ESTADIOS MAS IMPORTANTES",
+        "r1": "El Allegiant Stadium fue inaugurado el 31 de julio de 2020. El estadio es el hogar de los Las Vegas Raiders, un equipo de la National Football League (NFL). También ha sido utilizado para otros eventos deportivos y entretenimiento, como conciertos y eventos especiales.",
+        "r2": "El Bank of America Stadium fue inaugurado el 14 de septiembre de 1996. El estadio ha experimentado renovaciones y mejoras a lo largo de los años. Es conocido por su diseño que integra elementos modernos y su ambiente animado durante los eventos deportivos.",
+        "r3": "Children's Mercy Park fue inaugurado el 9 de junio de 2011. Es conocido por ser uno de los estadios más modernos de la MLS. Cuenta con comodidades para los espectadores, asientos cercanos al campo y una arquitectura que crea un ambiente íntimo durante los eventos."
+    },
+    "forms": {
+        "r1": "Comentarios",
+        "r2": "Por favor, comparta sus opiniones en el campo de Comentario",
+        "r3": "Nombre",
+        "r4": "Apellido",
+        "r5": "Teléfono",
+        "r6": "E-mail",
+        "r7": "Comentario",
+        "r8": "Enviar"
+    },
+    "comentarios":{
+        "subtitulo": "OPINIPONES",
+        "titulo": "CONOZCA LA SATISFACCION DE NUESTROS LECTORES",
+        "c1": "Navegación sencilla, interfaz genial. Encuentro fácilmente todo sobre la Copa América. Visualmente atractiva.",
+        "c2": "Actualización en tiempo real, siempre al tanto de los momentos clave de la Copa América. ¡Emoción pura en cada visita!",
+        "c3": "Fuente confiable y rápida para seguir la Copa América. Simple y efectiva, justo lo que necesito."
+    },
+    "footer": {
+        "r1": "Somos un portal no oficial de la Copa América 2024, apasionados por el fútbol y dedicados a brindar la mejor cobertura del torneo. Nos esforzamos por ofrecer información precisa y actualizada para que los fanáticos disfruten al máximo del evento.",
+        "r2": "Recursos",
+        "r3": "Preguntas Frecuentes",
+        "r4": "Corporación",
+        "r5": "Centro de Ayuda",
+        "r6": "Compañia",
+        "r7": "Estadios",
+        "r8": "Selecciones",
+        "r9": "Redes Sociales"
+    }
+}

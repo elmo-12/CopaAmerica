@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copa America</title>
+    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+    <link rel="stylesheet" href="css/stilos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        teal: {
+
+                        },
+                    },
+                },
+            },
+            darkMode: 'class',
+        }
+    </script>
+
+    <script>
+        // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark')
+        }
+    </script>
+</head>
+
+<body class="bg-slate-300 dark:bg-slate-800">
+    <!-- navbar -->
+    <section>
+        <nav class="bg-slate-400 border-gray-200 dark:bg-gray-900">
+            <div class="max-w-screen-4xl flex flex-wrap items-center justify-between mx-auto p-4">
+                <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
+                    <img src="img/logo.png" class="h-8" alt="Flowbite Logo" />
+                    <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
+                        America</span>
+                </a>
+                <div class="flex items-center md:order-2 space-x-1 md:space-x-0 rtl:space-x-reverse">
+                    <button data-collapse-toggle="navbar-language" type="button"
+                        class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                        aria-controls="navbar-language" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 17 14">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M1 1h15M1 7h15M1 13h15" />
+                        </svg>
+                    </button>
+                    <button id="theme-toggle" type="button"
+                        class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
+                        <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                        </svg>
+                        <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                                fill-rule="evenodd" clip-rule="evenodd"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
+                    id="navbar-language">
+                    <ul
+                        class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-slate-400 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                        <li>
+                            <a href="#" onclick="conducirASeccion('seccion1')"
+                                class="block py-2 px-3 text-white rounded md:text-blue-700 md:p-0 md:dark:text-blue-500"
+                                aria-current="page" data-section="menu" data-value="op1">Inicio</a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="conducirASeccion('seccion2')"
+                                class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                                data-section="menu" data-value="op2">Ganadores</a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="conducirASeccion('seccion3')"
+                                class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                                data-section="menu" data-value="op3">Estadios</a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="conducirASeccion('seccion4')"
+                                class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                                data-section="menu" data-value="op4">Mapa</a>
+                        </li>
+                        <li>
+                            <div
+                                class="block top-0 px-3 text-white rounded md:text-blue-700 md:p-0 md:dark:text-blue-500 ">
+                                <div class="flex md:order-2 space-x-1 md:space-x-0 rtl:space-x-reverse">
+                                    <button id="btnIdioma" type="button" data-dropdown-toggle="language-dropdown-menu"
+                                        class="inline-flex items-center font-medium justify-start pt-1 text-sm text-gray-900 dark:text-white rounded-lg cursor-pointer  dark:hover:text-white hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                                        <img src="img/Español.png" alt=""
+                                            class="rounded-full h-4 w-4 object-cover mr-2">
+                                        Español
+                                    </button>
+                                    <!-- Dropdown -->
+                                    <div class="z-50 hidden my-4 text-base list-none bg-slate-300 divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700"
+                                        id="language-dropdown-menu">
+                                        <div class="py-2 font-medium" role="none">
+                                            <div>
+                                                <a href="#" id="flag1" data-lenguaje="en"
+                                                    onclick="cambiartexto('English')"
+                                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
+                                                    role="menuitem">
+                                                    <div class="inline-flex items-center">
+                                                        <img src="img/English.png" alt=""
+                                                            class="rounded-full h-3.5 w-3.5 object-cover mr-2">
+                                                        English
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div>
+                                                <a href="#" id="flag2" data-lenguaje="es"
+                                                    onclick="cambiartexto('Español')"
+                                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
+                                                    role="menuitem">
+                                                    <div class="inline-flex items-center">
+                                                        <img src="img/Español.png" alt=""
+                                                            class="rounded-full h-3.5 w-3.5 object-cover mr-2">
+                                                        Español
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div>
+                                                <a href="#" id="flag3" data-lenguaje="pt"
+                                                    onclick="cambiartexto('Portugues')"
+                                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-600 dark:hover:text-white"
+                                                    role="menuitem">
+                                                    <div class="inline-flex items-center">
+                                                        <img src="img/Portugues.png" alt=""
+                                                            class="rounded-full h-3.5 w-3.5 object-cover mr-2">
+                                                        Portugues
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </section>
+    <!-- principal -->
+    <section id="seccion1">
+        <div class="w-full h-screen relative">
+            <img src="img/principal.png" class="w-full h-full object-cover">
+        </div>
+    </section>
+    <!-- cartas -->
+    <section id="seccion2">
+        <div class="pt-16">
+            <h6 class="dark:text-white text-black text-xs text-center font-['Nunito']" data-section="ganadores"
+                data-value="subtitulo">
+                GANADORES
+            </h6>
+            <h1 class="dark:text-white text-black text-secundario pt-4 text-center font-['Yeseva_One'] text-3xl px-4"
+                data-section="ganadores" data-value="titulo">CONOZCA A LOS MAS RECIENTES GANADORES
+            </h1>
+            <div class="contenedor-padre flex justify-center items-center pt-4 pb-1">
+                <div class="contenedor-hijo w-20 h-2.5 bg-stone-400">
+                </div>
+            </div>
+        </div>
+        <div class="flex items-center justify-center md:px-16">
+            <div class="slide-container swiper w-full py-[40px]">
+                <div class="slide-content mx-[40px] my-0 rounded-[25px] overflow-hidden">
+                    <div class="card-wrapper swiper-wrapper w-[320px]">
+                        <!-- uruguay -->
+                        <div class="card swiper-slide bg-white rounded-[25px]">
+                            <div
+                                class="image-content flex flex-col items-center px-[14px] py-[10px] relative gap-y-[5px] py-[25px] px-0">
+                                <span
+                                    class="overlay absolute h-full w-full bg-[#4070F4] top-0 left-0 pt-[25px] pr-[25px] pb-0 pl-[25px] rounded-t-[25px] rounded-bl-[25px]"></span>
+                                <span class="h-[40px] w-[40px] absolute bottom-[-40px] right-0 bg-[#4070F4]">.</span>
+                                <span
+                                    class="h-[40px] w-[50px] absolute bottom-[-40px] right-0 rounded-tr-[25px] bg-white text-white">.</span>
+                                <div class="card-image relative h-[150px] w-auto rounded-[20px] bg-white p-[3px]">
+                                    <img src="https://cdn.conmebol.com/wp-content/uploads/2016/05/champions.jpg" alt=""
+                                        class="card-img w-full h-full rounded-[20px] object-cover">
+                                </div>
+                            </div>
+                            <div class="card-content flex flex-col items-center px-[14px] py-[10px]">
+                                <h2 class="name text-lg font-medium text-{#333}">Uruguay</h2>
+                                <p class="description text-sm text-center text-{#707070}" data-section="ganadores"
+                                    data-value="r0">Uruguay se consagró campeón de
+                                    la Copa América en 2011 al vencer a Paraguay en la final mediante un contundente
+                                    3-0. Este logro marcó el decimoquinto título para la selección uruguaya.</p>
+                                <button
+                                    class="button border-none text-sm text-white py-[8px] px-[16px] bg-[#4070F4] rounded-[6px] m-[14px] cursor-pointer transition-all duration-300 ease hover:bg-[#2E5DF2]"
+                                    data-section="ganadores" data-value="b0">Ver
+                                    Mas</button>
+                            </div>
+                        </div>
+                        <!-- chile -->
+                        <div class="card swiper-slide bg-white rounded-[25px]">
+                            <div
+                                class="image-content flex flex-col items-center px-[14px] py-[10px] relative gap-y-[5px] py-[25px] px-0">
+                                <span
+                                    class="overlay absolute h-full w-full bg-[#4070F4] top-0 left-0 pt-[25px] pr-[25px] pb-0 pl-[25px] rounded-t-[25px] rounded-bl-[25px]"></span>
+                                <span class="h-[40px] w-[40px] absolute bottom-[-40px] right-0 bg-[#4070F4]">.</span>
+                                <span
+                                    class="h-[40px] w-[50px] absolute bottom-[-40px] right-0 rounded-tr-[25px] bg-white text-white">.</span>
+                                <div class="card-image relative h-[150px] w-auto rounded-[20px] bg-white p-[3px]">
+                                    <img src="https://e00-marca.uecdn.es/assets/multimedia/imagenes/2016/06/27/14670603514052.jpg"
+                                        alt="" class="card-img w-full h-full rounded-[20px] object-cover">
+                                </div>
+                            </div>
+                            <div class="card-content flex flex-col items-center px-[14px] py-[10px]">
+                                <h2 class="name text-lg font-medium text-{#333}">Chile</h2>
+                                <p class="description text-sm text-center text-{#707070}" data-section="ganadores"
+                                    data-value="r1">Chile ganó el torneo al vencer
+                                    a Argentina en la final, que se decidió por penales después de un empate 0-0 en el
+                                    tiempo reglamentario. Fue el segundo título consecutivo de Chile en la Copa América.
+                                </p>
+                                <button
+                                    class="button border-none text-sm text-white py-[8px] px-[16px] bg-[#4070F4] rounded-[6px] m-[14px] cursor-pointer transition-all duration-300 ease hover:bg-[#2E5DF2]"
+                                    data-section="ganadores" data-value="b1">Ver
+                                    Mas</button>
+                            </div>
+                        </div>
+                        <!-- brasil -->
+                        <div class="card swiper-slide bg-white rounded-[25px]">
+                            <div
+                                class="image-content flex flex-col items-center px-[14px] py-[10px] relative gap-y-[5px] py-[25px] px-0">
+                                <span
+                                    class="overlay absolute h-full w-full bg-[#4070F4] top-0 left-0 pt-[25px] pr-[25px] pb-0 pl-[25px] rounded-t-[25px] rounded-bl-[25px]"></span>
+                                <span class="h-[40px] w-[40px] absolute bottom-[-40px] right-0 bg-[#4070F4]">.</span>
+                                <span
+                                    class="h-[40px] w-[50px] absolute bottom-[-40px] right-0 rounded-tr-[25px] bg-white text-white">.</span>
+                                <div class="card-image relative h-[150px] w-auto rounded-[20px] bg-white p-[3px]">
+                                    <img src="https://cdn.conmebol.com/wp-content/uploads/2016/12/santos_campeon.jpg"
+                                        alt="" class="card-img w-full h-full rounded-[20px] object-cover">
+                                </div>
+                            </div>
+                            <div class="card-content flex flex-col items-center px-[14px] py-[10px]">
+                                <h2 class="name text-lg font-medium text-{#333}">Brasil</h2>
+                                <p class="description text-sm text-center text-{#707070}" data-section="ganadores"
+                                    data-value="r2">La selección brasileña ganó el
+                                    torneo al vencer a Perú 3-1 en la final, que tuvo lugar el 7 de julio de 2019, en el
+                                    Estadio Maracaná de Río de Janeiro. Fue el noveno título de la selección brasileña
+                                    en la historia de la Copa América.</p>
+                                <button
+                                    class="button border-none text-sm text-white py-[8px] px-[16px] bg-[#4070F4] rounded-[6px] m-[14px] cursor-pointer transition-all duration-300 ease hover:bg-[#2E5DF2]"
+                                    data-section="ganadores" data-value="b2">Ver
+                                    Mas</button>
+                            </div>
+                        </div>
+                        <!-- argentina -->
+                        <div class="card swiper-slide bg-white rounded-[25px]">
+                            <div
+                                class="image-content flex flex-col items-center px-[14px] py-[10px] relative gap-y-[5px] py-[25px] px-0">
+                                <span
+                                    class="overlay absolute h-full w-full bg-[#4070F4] top-0 left-0 pt-[25px] pr-[25px] pb-0 pl-[25px] rounded-t-[25px] rounded-bl-[25px]"></span>
+                                <span class="h-[40px] w-[40px] absolute bottom-[-40px] right-0 bg-[#4070F4]">.</span>
+                                <span
+                                    class="h-[40px] w-[50px] absolute bottom-[-40px] right-0 rounded-tr-[25px] bg-white text-white">.</span>
+                                <div class="card-image relative h-[150px] w-auto rounded-[20px] bg-white p-[3px]">
+                                    <img src="https://e.rpp-noticias.io/xlarge/2021/07/10/451845_1118621.jpg" alt=""
+                                        class="card-img w-full h-full rounded-[20px] object-cover">
+                                </div>
+                            </div>
+                            <div class="card-content flex flex-col items-center px-[14px] py-[10px]">
+                                <h2 class="name text-lg font-medium text-{#333}">Argentina</h2>
+                                <p class="description text-sm text-center text-{#707070}" data-section="ganadores"
+                                    data-value="r3">La selección Argentina ganó el
+                                    título del torneo al vencer a Brasil 1-0 en la final del 10 de julio de 2021 en el
+                                    Estadio Maracaná de Río de Janeiro, logrando así su decimoquinto título en la
+                                    historia de la Copa América.</p>
+                                <button
+                                    class="button border-none text-sm text-white py-[8px] px-[16px] bg-[#4070F4] rounded-[6px] m-[14px] cursor-pointer transition-all duration-300 ease hover:bg-[#2E5DF2]"
+                                    data-section="ganadores" data-value="b3">Ver
+                                    Mas</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div
+                    class="swiper-button-next swiper-navBtn text-[#6E93F7] transition-all duration-300 ease hover:text-[#4070F4] ">
+                </div>
+                <div
+                    class="swiper-button-prev swiper-navBtn text-[#6E93F7] transition-all duration-300 ease hover:text-[#4070F4]">
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+    <!-- estadios -->
+    <section id="seccion3">
+        <div class="pt-16">
+            <h6 class="dark:text-white text-black text-blanco text-xs text-center font-['Nunito']"
+                data-section="estadios" data-value="subtitulo">
+                ESTADIOS
+            </h6>
+            <h1 class="dark:text-white text-black text-secundario pt-4 text-center font-['Yeseva_One'] text-3xl px-4"
+                data-section="estadios" data-value="titulo">CONOZCA LOS ESTADIOS MAS IMPORTANTES
+            </h1>
+            <div class="contenedor-padre flex justify-center items-center pt-4 pb-1">
+                <div class="contenedor-hijo w-20 h-2.5 bg-stone-400">
+                </div>
+            </div>
+        </div>
+        <div class="">
+            <div class="mx-auto w-full max-w-screen-2xl p-4 py-6">
+                <div class="md:flex md:justify-between">
+                    <div class="grid grid-cols-1 gap-8 sm:gap-6 lg:grid-cols-3">
+                        <div class=" p-3 pt-5 flex flex-col items-center">
+                            <img src="img/Allegiant Stadium.jpg" alt="" class="w-48 h-48 mb-3 rounded-full shadow-lg">
+                            <h5 class="mt-4 text-2xl font-bold tracking-tight text-black dark:text-white text-center">
+                                Allegiant Stadium
+                            </h5>
+                            <h5 class="m-2 text-xl tracking-tight text-black dark:text-white text-center">Nevada EEUU
+                            </h5>
+                            <p class="text-center dark:text-white text-black " data-section="estadios" data-value="r1">
+                                El Allegiant Stadium fue inaugurado el 31 de
+                                julio de 2020. El estadio es el hogar de
+                                los Las Vegas Raiders, un equipo de la National Football League (NFL). También ha sido
+                                utilizado para
+                                otros eventos deportivos y entretenimiento, como conciertos y eventos especiales.</p>
+                            <div style="text-align: center;" class="mt-3">
+                                <i class="fa-solid fa-futbol dark:text-white text-black"></i>
+                                <i class="fa-solid fa-futbol dark:text-white text-black"></i>
+                                <i class="fa-solid fa-futbol dark:text-white text-black"></i>
+                            </div>
+                        </div>
+                        <div class="hidden md:block">
+                            <div class=" p-3 pt-5 flex flex-col items-center">
+                                <img src="img/Bank of America Stadium.jpeg" alt=""
+                                    class="w-48 h-48 mb-3 rounded-full shadow-lg">
+                                <h5
+                                    class="mt-4 text-2xl font-bold tracking-tight text-black dark:text-white text-center">
+                                    Bank of America
+                                    Stadium</h5>
+                                <h5 class="m-2 text-xl tracking-tight text-black dark:text-white text-center">Carolina
+                                    del
+                                    Norte</h5>
+                                <p class="text-center text-black dark:text-white" data-section="estadios"
+                                    data-value="r2">El
+                                    Bank of America Stadium fue inaugurado el
+                                    14 de septiembre de 1996. El estadio ha
+                                    experimentado renovaciones y mejoras a lo largo de los años. Es conocido por su
+                                    diseño
+                                    que integra
+                                    elementos modernos y su ambiente animado durante los eventos deportivos.</p>
+                                <div style="text-align: center;" class="mt-3">
+                                    <i class="fa-solid fa-futbol dark:text-white text-black"></i>
+                                    <i class="fa-solid fa-futbol dark:text-white text-black"></i>
+                                    <i class="fa-solid fa-futbol dark:text-white text-black"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hidden lg:block">
+                            <div class=" p-3 pt-5 flex flex-col items-center">
+                                <img src="img/Children's_Mercy_Park_Aerial.jpg" alt=""
+                                    class="w-48 h-48 mb-3 rounded-full shadow-lg">
+                                <h5
+                                    class="mt-4 text-2xl font-bold tracking-tight text-black dark:text-white text-center">
+                                    Children's Mercy
+                                    Park</h5>
+                                <h5 class="m-2 text-xl tracking-tight text-black dark:text-white text-center">Kansas
+                                </h5>
+                                <p class="text-center text-black dark:text-white" data-section="estadios"
+                                    data-value="r3">
+                                    Children's Mercy Park fue inaugurado el 9 de
+                                    junio de 2011. Es conocido por ser uno
+                                    de los estadios más modernos de la MLS. Cuenta con comodidades para los
+                                    espectadores,
+                                    asientos cercanos al
+                                    campo y una arquitectura que crea un ambiente íntimo durante los eventos.</p>
+                                <div style="text-align: center;" class="mt-3">
+                                    <i class="fa-solid fa-futbol dark:text-white text-black"></i>
+                                    <i class="fa-solid fa-futbol dark:text-white text-black"></i>
+                                    <i class="fa-solid fa-futbol dark:text-white text-black"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- forms -->
+    <section>
+        <div class="bg-extra text-gray-900 pb-4" id="contac">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-6xl mx-auto px-7 ">
+                <div>
+                    <div class="max-w-6xl pt-2 mx-4 text-center">
+
+                        <h1 class="text-3xl font-bold text-[#7db6e9] sm:text-4xl md:w-96" data-section="forms"
+                            data-value="r1">
+                            Comentarios
+                        </h1>
+
+                        <p class="mt-4 text-zinc-500 md:w-96 dark:text-zinc-300" data-section="forms" data-value="r2">
+                            Por favor, comparta sus opiniones en el campo de Comentario
+                        </p>
+                    </div>
+                    <form class="py-3">
+                        <div class="mb-5 px-4">
+                            <input
+                                class="w-full md:w-96 border-2 border-gray-300 p-2 rounded-md focus:outline-none focus:border-sebg-[#7db6e9]"
+                                type="text" id="name" name="Nombre" placeholder="Nombre" data-section="forms"
+                                data-value="r3">
+                        </div>
+                        <div class="mb-5 px-4">
+                            <input
+                                class="w-full md:w-96 border-2 border-gray-300 p-2 rounded-md focus:outline-none focus:border-sebg-[#7db6e9]"
+                                type="text" id="name" name="name" placeholder="Apellido" data-section="forms"
+                                data-value="r4">
+                        </div>
+                        <div class="mb-5 px-4">
+                            <input
+                                class="w-full md:w-96 border-2 border-gray-300 p-2 rounded-md focus:outline-none focus:border-sebg-[#7db6e9]"
+                                type="text" id="name" name="name" placeholder="Teléfono" data-section="forms"
+                                data-value="r5">
+                        </div>
+                        <div class="mb-5 px-4">
+                            <input
+                                class="w-full md:w-96 border-2 border-gray-300 p-2 rounded-md focus:outline-none focus:border-sebg-[#7db6e9]"
+                                type="email" id="email" name="email" placeholder="E-mail" data-section="forms"
+                                data-value="r6">
+                        </div>
+                        <div class="w-full md:w-96 h-36 border-gray-300 rounded-md mb-5 px-4">
+                            <textarea class="w-full md:w-96 h-36 border-0 focus:outline-none rounded-md p-2"
+                                placeholder="Comentario" data-section="forms" data-value="r7"></textarea>
+                        </div>
+                        <div class="mb-5 px-4">
+                            <button
+                                class="block text-white hover:text-extra font-bold p-3 py-3 w-full md:w-96 rounded bg-[#7db6e9]"
+                                type="submit" data-section="forms" data-value="r8">
+                                Enviar
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="flex items-center justify-center">
+                    <img class="w-3/5 h-auto rounded-full" src="img/copa.jpg" alt="Imagen de la comunidad">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- comentarios -->
+    <section>
+        <div class="py-16 px-4">
+            <h6 class="dark:text-white text-black text-blanco text-xs text-center font-['Nunito']"
+                data-section="estadios" data-value="subtitulo" data-section="comentarios" data-value="subtitulo">
+                OPINIPONES
+            </h6>
+            <h1 class="dark:text-white text-black text-secundario pt-4 text-center font-['Yeseva_One'] text-3xl px-4"
+                data-section="estadios" data-value="titulo" data-section="comentarios" data-value="titulo">CONOZCA LA
+                SATISFACCION DE NUESTROS LECTORES
+            </h1>
+            <div class="contenedor-padre flex justify-center items-center pt-4 pb-1">
+                <div class="contenedor-hijo w-20 h-2.5 bg-stone-400">
+                </div>
+            </div>
+            <div class="flex justify-center pt-8">
+                <div class="max-w-4xl divide-y divide-dashed gap-4 grid divide-black dark:divide-white">
+                    <div class="flex flex-wrap">
+                        <div class="basis-1/6">
+                            <img src="https://www.verisure.pe/lp/html-lp/img/ico/ico-opinion2.png" alt="">
+                        </div>
+                        <div class="basis-5/6 pl-4">
+                            <p class="dark:text-white text-black" data-section="comentarios" data-value="c1">Navegación
+                                sencilla, interfaz genial. Encuentro fácilmente todo sobre la Copa América. Visualmente
+                                atractiva.</p>
+                        </div>
+                        <div class="basis-full">
+                            <p class="text-red-800">María Isabel - 27 años</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap pt-4">
+                        <div class="basis-1/6">
+                            <img src="https://www.verisure.pe/lp/html-lp/img/ico/ico-opinion4.png" alt="">
+                        </div>
+                        <div class="basis-5/6 pl-4">
+                            <p class="dark:text-white text-black" data-section="comentarios" data-value="c2">
+                                Actualización en tiempo real, siempre al tanto de los momentos clave de la Copa América.
+                                ¡Emoción pura en cada visita!</p>
+                        </div>
+                        <div class="basis-full">
+                            <p class="text-red-800">Marisa - 61 años</p>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap pt-4">
+                        <div class="basis-1/6">
+                            <img src="https://www.verisure.pe/lp/html-lp/img/ico/ico-opinion1.png" alt="">
+                        </div>
+                        <div class="basis-5/6 pl-4">
+                            <p class="dark:text-white text-black" data-section="comentarios" data-value="c3">Fuente
+                                confiable y rápida para seguir la Copa América. Simple y efectiva, justo lo que
+                                necesito.</p>
+                        </div>
+                        <div class="basis-full">
+                            <p class="text-red-800">Pedro - 41 años</p>
+                        </div>
+                    </div>
+                    <div></div>
+                </div>
+            </div>
+        </div>
+        <div>
+
+        </div>
+    </section>
+    <!-- mapa -->
+    <section id="seccion4">
+        <div>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10651.1273149268!2d-80.85840767613153!3d35.22172243417267!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8856a02cbdb65535%3A0x480ec8bd36ab934f!2sBank%20of%20America%20Stadium!5e0!3m2!1ses!2spe!4v1703648703649!5m2!1ses!2spe"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade" class="w-full h-[400px]"></iframe>
+        </div>
+    </section>
+    <!-- footer -->
+    <section>
+        <div class="bg-slate-400 border-gray-200 dark:bg-gray-900">
+            <div class="mx-auto w-full max-w-screen-2xl p-4 py-6">
+                <div class="">
+                    <!-- <div class="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-3 gap-8 sm:gap-6 md:grid-cols-4"></div> -->
+                    <div class="grid grid-cols-3 gap-8 lg:grid-cols-4">
+                        <div class="hidden lg:block">
+                            <p class="text-star text-white" data-section="footer" data-value="r1">Somos un portal no
+                                oficial de la Copa
+                                América 2024, apasionados por el fútbol y dedicados a brindar la mejor cobertura del
+                                torneo. Nos
+                                esforzamos por ofrecer información precisa y actualizada para que los fanáticos
+                                disfruten al máximo del
+                                evento.</p>
+                        </div>
+                        <div>
+                            <h5 class="text-xl tracking-tight text-white text-star mb-7" data-section="footer"
+                                data-value="r2">Recursos
+                            </h5>
+                            <ul class="text-white font-medium">
+                                <li class="">
+                                    <a href="#" class=" hover:underline" data-section="footer" data-value="r3">Preguntas
+                                        Frecuentes</a>
+                                </li>
+                                <li class="">
+                                    <a href="#" class="hover:underline" data-section="footer"
+                                        data-value="r4">Corporación</a>
+                                </li>
+                                <li class="">
+                                    <a href="#" class="hover:underline" data-section="footer" data-value="r5">Centro de
+                                        Ayuda</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h5 class="text-xl tracking-tight text-white text-star mb-7" data-section="footer"
+                                data-value="r6">Compañia
+                            </h5>
+                            <ul class="text-white font-medium">
+                                <li class="">
+                                    <a href="#" class=" hover:underline" data-section="footer"
+                                        data-value="r7">Estadios</a>
+                                </li>
+                                <li class="">
+                                    <a href="#" class="hover:underline" data-section="footer"
+                                        data-value="r8">Selecciones</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h5 class="text-xl tracking-tight text-white text-star mb-7" data-section="footer"
+                                data-value="r9">Redes
+                                Sociales</h5>
+                            <div style="align-items: center;" class="flex">
+                                <a href="#" class="border border-white rounded-full p-1 px-2.5 ml-0.5"><i
+                                        class="fa-brands fa-facebook-f" style="color: #ffffff;"></i></a>
+                                <a href="#" class="border border-white rounded-full p-1 px-2 ml-2.5"><i
+                                        class="fa-brands fa-twitter" style="color: #ffffff;"></i></i></a>
+                                <a href="#" class="border border-white rounded-full p-1 px-1.5 ml-2.5"><i
+                                        class="fa-brands fa-youtube" style="color: #ffffff;"></i></a>
+                                <a href="#" class="border border-white rounded-full p-1 px-2 ml-2.5"><i
+                                        class="fa-brands fa-linkedin" style="color: #ffffff;"></i></a>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- btn whatsapp -->
+    <section>
+        <a href="https://api.whatsapp.com/send?phone=954623890" class="btn-wsp" target="_blank">
+            <i class="fa-brands fa-whatsapp fa-beat" style="color: #353535;"></i> </i>
+        </a>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="js/funtioncs.js"></script>
+</body>
+
+</html>

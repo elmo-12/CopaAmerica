@@ -1,0 +1,55 @@
+{
+  "menu": {
+    "op1": "Home",
+    "op2": "Winners",
+    "op3": "Stadiums",
+    "op4": "Map"
+  },
+  "ganadores": {
+    "subtitulo": "WINNERS",
+    "titulo": "MEET THE MOST RECENT WINNERS",
+    "r0": "Uruguay became champion of the Copa América in 2011 by beating Paraguay in the final by a resounding 3-0. This achievement marked the fifteenth title for the Uruguayan team.",
+    "b0": "See More",
+    "r1": "Chile won the tournament by defeating Argentina in the final, which was decided by penalties after a 0-0 draw in regular time. It was Chile's second consecutive title in the Copa America.",
+    "b1": "See More",
+    "r2": "The Brazilian national team won the tournament by defeating Peru 3-1 in the final, which took place on July 7, 2019, at the Maracanã Stadium in Rio de Janeiro. It was the ninth title for the Brazilian national team in the history of the Copa America.",
+    "b2": "See More",
+    "r3": "The Argentine national team secured the tournament title by defeating Brazil 1-0 in the final, held on July 10, 2021, at the Maracanã Stadium in Rio de Janeiro. This victory marked the fifteenth title in the history of the Copa America for the Argentine national team.",
+    "b3": "See More"
+  },
+  "estadios": {
+    "subtitulo": "STADIUMS",
+    "titulo": "KNOW THE MOST IMPORTANT STADIUMS",
+    "r1": "The Allegiant Stadium was inaugurated on July 31, 2020. The stadium is home to the Las Vegas Raiders, a team in the National Football League (NFL). It has also been used for other sports events and entertainment, such as concerts and special events.",
+    "r2": "The Bank of America Stadium was inaugurated on September 14, 1996. The stadium has undergone renovations and improvements over the years. It is known for its design that integrates modern elements and its lively atmosphere during sports events.",
+    "r3": "Children's Mercy Park was inaugurated on June 9, 2011. It is known for being one of the most modern stadiums in the MLS. It features amenities for spectators, seats close to the field, and architecture that creates an intimate atmosphere during events."
+  },
+  "forms": {
+    "r1": "Comments",
+    "r2": "Please share your opinions in the Comment field",
+    "r3": "First Name",
+    "r4": "Last Name",
+    "r5": "Phone",
+    "r6": "Email",
+    "r7": "Comment",
+    "r8": "Submit"
+  },
+  "comentarios": {
+    "subtitulo": "OPINIONS",
+    "titulo": "DISCOVER THE SATISFACTION OF OUR READERS",
+    "c1": "Simple navigation, great interface. I easily find everything about the Copa America. Visually appealing.",
+    "c2": "Real-time updates, always aware of key moments in the Copa America. Pure excitement with each visit!",
+    "c3": "Reliable and fast source to follow the Copa America. Simple and effective, just what I need."
+  },
+  "footer": {
+    "r1": "We are an unofficial portal for the Copa America 2024, passionate about football, and dedicated to providing the best coverage of the tournament. We strive to offer accurate and up-to-date information for fans to enjoy the event to the fullest.",
+    "r2": "Resources",
+    "r3": "Frequently Asked Questions",
+    "r4": "Corporation",
+    "r5": "Help Center",
+    "r6": "Company",
+    "r7": "Stadiums",
+    "r8": "Teams",
+    "r9": "Social Media"
+  }
+}

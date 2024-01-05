@@ -1,0 +1,55 @@
+{
+  "menu": {
+    "op1": "Início",
+    "op2": "Vencedores",
+    "op3": "Estádios",
+    "op4": "Mapa"
+  },
+  "ganadores": {
+    "subtitulo": "VENCEDORES",
+    "titulo": "CONHEÇA OS VENCEDORES MAIS RECENTES",
+    "r0": "O Uruguai sagrou-se campeão da Copa América em 2011 ao vencer o Paraguai na final por contundentes 3 a 0. Essa conquista marcou o décimo quinto título da seleção uruguaia.",
+    "b0": "Ver Mais",
+    "r1": "Chile ganhou o torneio ao derrotar a Argentina na final, que foi decidida nos pênaltis após um empate de 0-0 no tempo regulamentar. Foi o segundo título consecutivo do Chile na Copa América.",
+    "b1": "Ver Mais",
+    "r2": "A seleção brasileira venceu o torneio ao derrotar o Peru por 3 a 1 na final, que ocorreu em 7 de julho de 2019, no Estádio do Maracanã, no Rio de Janeiro. Foi o nono título da seleção brasileira na história da Copa América.",
+    "b2": "Ver Mais",
+    "r3": "A seleção argentina garantiu o título do torneio ao derrotar o Brasil por 1 a 0 na final, realizada em 10 de julho de 2021, no Estádio do Maracanã, no Rio de Janeiro. Essa vitória marcou o décimo quinto título na história da Copa América para a seleção argentina.",
+    "b3": "Ver Mais"
+  },
+  "estadios": {
+    "subtitulo": "ESTÁDIOS",
+    "titulo": "CONHEÇA OS ESTÁDIOS MAIS IMPORTANTES",
+    "r1": "O Allegiant Stadium foi inaugurado em 31 de julho de 2020. O estádio é a casa do Las Vegas Raiders, uma equipe da National Football League (NFL). Também foi utilizado para outros eventos esportivos e de entretenimento, como concertos e eventos especiais.",
+    "r2": "O Bank of America Stadium foi inaugurado em 14 de setembro de 1996. O estádio passou por renovações e melhorias ao longo dos anos. É conhecido por seu design que integra elementos modernos e sua atmosfera animada durante eventos esportivos.",
+    "r3": "O Children's Mercy Park foi inaugurado em 9 de junho de 2011. É conhecido por ser um dos estádios mais modernos da MLS. Possui comodidades para os espectadores, assentos próximos ao campo e uma arquitetura que cria uma atmosfera íntima durante os eventos."
+  },
+  "forms": {
+    "r1": "Comentários",
+    "r2": "Por favor, compartilhe suas opiniões no campo de Comentário",
+    "r3": "Nome",
+    "r4": "Sobrenome",
+    "r5": "Telefone",
+    "r6": "E-mail",
+    "r7": "Comentário",
+    "r8": "Enviar"
+  },
+  "comentarios": {
+    "subtitulo": "OPINIÕES",
+    "titulo": "DESCUBRA A SATISFAÇÃO DOS NOSSOS LEITORES",
+    "c1": "Navegação simples, interface excelente. Eu encontro facilmente tudo sobre a Copa América. Visualmente atraente.",
+    "c2": "Atualizações em tempo real, sempre ciente dos momentos-chave da Copa América. Pura emoção a cada visita!",
+    "c3": "Fonte confiável e rápida para seguir a Copa América. Simples e eficaz, exatamente o que eu preciso."
+  },
+  "footer": {
+    "r1": "Somos um portal não oficial da Copa América 2024, apaixonados por futebol e dedicados a fornecer a melhor cobertura do torneio. Nos esforçamos para oferecer informações precisas e atualizadas para que os fãs aproveitem ao máximo o evento.",
+    "r2": "Recursos",
+    "r3": "Perguntas Frequentes",
+    "r4": "Corporação",
+    "r5": "Centro de Ajuda",
+    "r6": "Empresa",
+    "r7": "Estádios",
+    "r8": "Seleções",
+    "r9": "Redes Sociais"
+  }
+}
